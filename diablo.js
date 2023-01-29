@@ -1,13 +1,4 @@
-/*
-CUMA NAMBAH DOANG
-JIKA RENEME KASIH CREDIT LAHH!
-JUAL SC INI? AUTO FULL ENC
 
-BY 
-LYNN
-ZYY
-PRII
-*/
 
 
 const { modul } = require('./module');
@@ -23,7 +14,7 @@ const { uptotelegra } = require('./scrape/upload')
 const tiktok = require('./scrape/tiktok')
 const audionye = fs.readFileSync('./y.mp3')
 const owner = JSON.parse(fs.readFileSync('./database/owner.json').toString()) 
-	
+const caliph = require('caliph-api');
 global.db = JSON.parse(fs.readFileSync('./database/database.json'))
 if (global.db) global.db = {
 sticker: {},
