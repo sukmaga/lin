@@ -17,4 +17,4 @@ RUN npm install -g npm@8.1.3
 RUN npm install -g pm2
 RUN npm update
 COPY . .
-CMD ["node", "next"]`
+CMD ["node", "next.js"]`
