@@ -631,11 +631,12 @@ diablo.sendMessage(m.chat, buttonMessage, { quoted: m })
 break
 case 'ytmp3':{
 
-if (!text) return reply( `Example : ${prefix + command} https://youtube.com*****`)
-if (!q.includes('youtu')) return reply(`Link Invalid!!`)
+if (!text) throw `Example : ${prefix + command} Link Nya`
+let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
+if (!isLinks2) return m.reply(`Linknya Jelek`)
 m.reply(mess.wait)
 data = await caliph.downloader.youtube.ytmp4(q)
-var nme = `./media/vid/${Date.now()}.mp4`
+var nme = `./media/vid/nih_videonya.mp4`
  fs.writeFileSync(nme, await getBuffer(data.result))
  var ran = './media/aud/'+getRandom('.mp3')
  exec(`ffmpeg -i ${nme} ${ran}`, async (err) => {
@@ -649,8 +650,9 @@ break
 case 'ytmp4':
 case 'ytvideo':{
 
-if (!text) return reply( `Example : ${prefix + command} https://youtube.com*****`)
-if (!q.includes('youtu')) return reply(`Link Invalid!!`)
+if (!text) throw `Example : ${prefix + command} Link Nya`
+let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
+if (!isLinks2) return m.reply(`Linknya Jelek`)
 m.reply(mess.wait)
 data = await caliph.downloader.youtube.ytmp4(q)
 diablo.sendMessage(m.chat, { video: await getBuffer(data.result), caption: data.title }, { quoted: m }
