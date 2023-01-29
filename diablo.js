@@ -643,7 +643,7 @@ var nme = `./media/vid/${Date.now()}.mp4`
 fs.unlinkSync(nme)
 fs.unlinkSync(ran)
  })
- confirmlimit(sender, 1)
+
 }
 break
 case 'ytmp4':
@@ -653,8 +653,7 @@ if (!text) return reply( `Example : ${prefix + command} https://youtube.com*****
 if (!q.includes('youtu')) return reply(`Link Invalid!!`)
 m.reply(mess.wait)
 data = await caliph.downloader.youtube.ytmp4(q)
-diablo.sendMessage(m.chat, { video: await getBuffer(data.result), caption: data.title }, { quoted: m })
-confirmlimit(sender, 1)
+diablo.sendMessage(m.chat, { video: await getBuffer(data.result), caption: data.title }, { quoted: m }
 }
 break
 
